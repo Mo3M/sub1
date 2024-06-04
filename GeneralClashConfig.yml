@@ -131,7 +131,7 @@ rule-providers:
   reject1:
     type: http
     behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject1.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
   iran_other_sites:
