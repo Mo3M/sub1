@@ -1,9 +1,9 @@
-a1.maxxy.quest
-a2.maxxy.quest
-a3.maxxy.quest
-a4.maxxy.quest
-a5.maxxy.quest
-a6.maxxy.quest
+a1.maxxy.quest#Bon9-1
+a2.maxxy.quest#Bon9-2
+a3.maxxy.quest#Bon9-3
+a4.maxxy.quest#Bon9-4
+a5.maxxy.quest#Bon9-5
+a6.maxxy.quest#Bon9-6
 a7.maxxy.quest
 a8.maxxy.quest
 a9.maxxy.quest
