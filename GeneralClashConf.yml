@@ -945,7 +945,7 @@ rule-providers:
     path: ./ruleset/lancidr.yaml
     interval: 86400
 
-#rules:
-#  - RULE-SET, reject1, 🛑 Global Block
-#  - RULE-SET,iran_ads, 🛑 Global Block
-#  - RULE-SET,iran_other_sites, 🎯 Global Direct Connection
+rules:
+  - RULE-SET, reject1, 🛑 Global Block
+  - RULE-SET,iran_ads, 🛑 Global Block
+  - RULE-SET,iran_other_sites, 🎯 Global Direct Connection
