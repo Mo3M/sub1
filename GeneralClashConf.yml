@@ -946,70 +946,60 @@ rule-providers:
 #    interval: 86400
   BanProgramAD:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
     path: ./ruleset/BanProgramAD.list
     interval: 432000
   Adobe:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/adobe.list
     path: ./ruleset/adobe.list
     interval: 432000
   GoogleFCM:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
     path: ./ruleset/GoogleFCM.list
     interval: 432000
   MS:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
     path: ./ruleset/Microsoft.list
     interval: 432000
   Apple:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
     path: ./ruleset/Apple.list
     interval: 432000
   TG:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
     path: ./ruleset/Telegram.list
     interval: 432000    
   OpenAI:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
     path: ./ruleset/OpenAi.list
     interval: 432000
   AI:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
     path: ./ruleset/ai.list
     interval: 432000    
   YT:
     type: http
-    format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
     path: ./ruleset/YouTube.list
     interval: 432000
   NetFlix:
-    type: http
-    format: text
+    type: http    
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
     path: ./ruleset/Netflix.list
