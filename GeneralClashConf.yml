@@ -68,7 +68,8 @@ rule-providers:
     path: ./ruleset/lancidr.yaml
     interval: 86400
 
-
+rule:
+  - RULE-SET, reject1,🛑 Global Block
 
 # Clash 的 RESTful API
 external-controller: '127.0.0.1:9090'
