@@ -26,7 +26,7 @@ bind-address: "*"
 ipv6: true
 
 # Rule mode: rule (rule) / global (global proxy) / direct (global direct connection) / script (script)
-# mode: rule
+mode: rule
 
 # Set the log output level (default level: silent, which means no output to avoid program memory overflow due to excessive log content).
 # 5 levels: silent / error / warning / info / debug. The higher the level, the larger the log output, and the more inclined to debugging. Please enable it if necessary.
