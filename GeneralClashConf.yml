@@ -951,7 +951,20 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
     path: ./ruleset/BanProgramAD.list
     interval: 432000
-
+  Adobe:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/adobe.list
+    path: ./ruleset/adobe.list
+    interval: 432000
+  GoogleFCM:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    interval: 432000
 
 
 
@@ -959,7 +972,10 @@ rules:
   - RULE-SET, reject, 🛑 Global Block
   - RULE-SET,iran_ads, 🛑 Global Block
 
-  - RULE-SET,BanProgramAD, 🛑 Global Block
+  - RULE-SET,BanProgramAD, 🍃 Application Ban
+  - RULE-SET,BanProgramAD, 🍃 Application Ban
+  - RULE-SET,GoogleFCM, 📢 Google FCM
+  
 
 
   
