@@ -909,7 +909,7 @@ cfw-bypass:
   - <local>
 
 rule-providers:
-  reject1:
+  reject:
     type: http
     behavior: domain
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
@@ -930,22 +930,22 @@ rule-providers:
     path: ./ruleset/iran_ads.txt
     interval: 432000
 
-  ads:
-    type: http
-    format: text
-    behavior: domain
-    url: "https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt"
-    path: ./ruleset/ads.txt
-    interval: 86400
+#  ads:
+#    type: http
+#    format: text
+#    behavior: domain
+#    url: "https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt"
+#    path: ./ruleset/ads.txt
+#    interval: 86400
 
-  lancidr:
-    type: http
-    behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
-    path: ./ruleset/lancidr.yaml
-    interval: 86400
+#  lancidr:
+#    type: http
+#    behavior: ipcidr
+#    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+#    path: ./ruleset/lancidr.yaml
+#    interval: 86400
 
 #rules:
-#  - RULE-SET, reject1, 🛑 Global Block
+#  - RULE-SET, reject, 🛑 Global Block
 #  - RULE-SET,iran_ads, 🛑 Global Block
 #  - RULE-SET,iran_other_sites, 🎯 Global Direct Connection
