@@ -944,10 +944,25 @@ rule-providers:
 #    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
 #    path: ./ruleset/lancidr.yaml
 #    interval: 86400
+  BanProgramAD:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    interval: 432000
+
+
+
 
 rules:
   - RULE-SET, reject, 🛑 Global Block
   - RULE-SET,iran_ads, 🛑 Global Block
+
+  - RULE-SET,BanProgramAD, 🛑 Global Block
+
+
+  
   - GEOIP,IR,DIRECT
   - DOMAIN-SUFFIX,ir,DIRECT
   - RULE-SET,iran_other_sites, 🎯 Global Direct Connection
