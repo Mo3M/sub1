@@ -965,9 +965,27 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
     path: ./ruleset/GoogleFCM.list
     interval: 432000
-
-
-
+  MS:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./ruleset/Microsoft.list
+    interval: 432000
+  Apple:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./ruleset/Apple.list
+    interval: 432000
+  TG:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./ruleset/Telegram.list
+    interval: 432000
 rules:
   - RULE-SET, reject, 🛑 Global Block
   - RULE-SET,iran_ads, 🛑 Global Block
@@ -975,7 +993,9 @@ rules:
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,GoogleFCM, 📢 Google FCM
-  
+  - RULE-SET,MS,Ⓜ️ Microsoft Services
+  - RULE-SET,Apple,ruleset=🍎 Apple services
+  - RULE-SET,TG,📲 Telegram Info
 
 
   
