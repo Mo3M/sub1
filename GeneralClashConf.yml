@@ -987,19 +987,27 @@ rule-providers:
     path: ./ruleset/Telegram.list
     interval: 432000    
   OpenAI:
-    type: OpenAI
+    type: http
     format: text
     behavior: domain
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
     path: ./ruleset/OpenAi.list
     interval: 432000
   AI:
-    type: OpenAI
+    type: http
     format: text
     behavior: domain
     url: https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
     path: ./ruleset/ai.list
+    interval: 432000    
+  YT:
+    type: http
+    format: text
+    behavior: domain
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+    path: ./ruleset/YouTube.list
     interval: 432000
+
 rules:
   - RULE-SET, reject, 🛑 Global Block
   - RULE-SET,iran_ads, 🛑 Global Block
@@ -1010,8 +1018,9 @@ rules:
   - RULE-SET,MS,Ⓜ️ Microsoft Services
   - RULE-SET,Apple,ruleset=🍎 Apple services
   - RULE-SET,TG,📲 Telegram Info
-  - RUlE-SET,OpenAI, 🤖 OpenAi
-  - RUlE-SET,AI, 🤖 OpenAi
+  - RUlE-SET,OpenAI, 🤖 OpenAI
+  - RUlE-SET,AI, 🤖 OpenAI
+  - RULE-SET,YT,📹 YouTube video
 
 
   
