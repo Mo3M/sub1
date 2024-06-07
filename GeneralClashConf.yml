@@ -1,3 +1,4 @@
+
 #---------------------------------------------------#
 # The configuration file needs to be placed in $HOME/.config/clash/config.yml
 # Or run config.yml in the directory
@@ -69,7 +70,9 @@ rule-providers:
     interval: 86400
 
 rule:
-  - RULE-SET, reject1,🛑 Global Block
+  - RULE-SET, reject1, 🛑 Global Block
+  - RULE-SET,iran_ads, 🛑 Global Block
+  - RULE-SET,iran_other_sites, 🎯 Global Direct Connection,
 
 # Clash 的 RESTful API
 external-controller: '127.0.0.1:9090'
