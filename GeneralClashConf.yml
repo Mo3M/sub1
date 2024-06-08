@@ -1050,7 +1050,7 @@ rules:
   - RUlE-SET,AI, 🤖 OpenAI
   - RULE-SET,YT,📹 YouTube video
   - RULE-SET,NetFlix,🎥 Netflix
-  - RULE-SET,Foreign Media,🌍 Foreign Media
+  - RULE-SET,Foreign-Media,🌍 Foreign Media
   #- RULE_SET,Proxy Lite,🚀 Node Selection
 
   
