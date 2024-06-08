@@ -1013,10 +1013,21 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
     path: ./ruleset/Netflix.list
+    interval: 432000  
+  Foreign-Media:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./ruleset/Foreign-Media.list
     interval: 432000
-  
-    
-
+  Proxy Lite:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./ruleset/Proxy-Lite.list
+    interval: 432000
 rules:
   - RULE-SET, reject, 🛑 Global Block
   - RULE-SET,iran_ads, 🛑 Global Block
@@ -1031,7 +1042,8 @@ rules:
   - RUlE-SET,AI, 🤖 OpenAI
   - RULE-SET,YT,📹 YouTube video
   - RULE-SET,NetFlix,🎥 Netflix
-  - RULE-SET,Foreign,🌍 Foreign Media
+  - RULE-SET,Foreign Media,🌍 Foreign Media
+  #- RULE_SET,Proxy Lite,🚀 Node Selection
 
   
   - GEOIP,IR,DIRECT
