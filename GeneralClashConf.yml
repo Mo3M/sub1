@@ -1031,6 +1031,7 @@ rules:
   - RUlE-SET,AI, 🤖 OpenAI
   - RULE-SET,YT,📹 YouTube video
   - RULE-SET,NetFlix,🎥 Netflix
+  - RULE-SET,Foreign,🌍 Foreign Media
 
   
   - GEOIP,IR,DIRECT
