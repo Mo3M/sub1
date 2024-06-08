@@ -64,6 +64,27 @@ experimental:
 #   '*.clash.dev': 127.0.0.1
 #   'alpha.clash.dev': '::1'
 
+dns:
+  enabled: true
+  ipv6: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip # Mode: redir-host or fake-ip
+  fake-ip-range: 198.18.0.1/16 #
+  fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
+     - '*.and'
+     - localhost.ptlogin2.qq.com
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - https://dns.google/dns-query
+    - https://dns.cloudflare.com/dns-query	
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+
 #dns:
   #enable: true # Whether to enable dns false
   #ipv6: false
