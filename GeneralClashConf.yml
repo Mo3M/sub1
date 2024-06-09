@@ -385,6 +385,41 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/CloudflareCIDR.list
     path: ./ruleset/CloudflareCIDR.list
+    interval: 432000    
+  NetEaseMusic:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetEaseMusic.list
+    path: ./ruleset/NetEaseMusic.list
+    interval: 432000
+  Game-Epic:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+    path: ./ruleset/Game-Epic.list
+    interval: 432000
+  Game-Nintendo:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list
+    path: ./ruleset/Game-Nintendo.list
+    interval: 432000
+  Game-Origin:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+    path: ./ruleset/Game-Origin.list
+    interval: 432000  
+  Game-Sony:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+    path: ./ruleset/Game-Sony.list
     interval: 432000
 
 
@@ -420,7 +455,12 @@ rules:
   - RULE-SET,NetFlix,🎥 Netflix
   - RULE-SET,Foreign-Media,🌍 Foreign Media
   #- RULE_SET,Proxy Lite,🚀 Node Selection
-  - RULE-SET,CF-CIDR,☁️ CloudFlareCDN
+  - RULE-SET, CF-CIDR,☁️ CloudFlareCDN
+  - RULE-SET, NetEaseMusic,🎶 NetEase Music
+  - RULE-SET, Game-Epic, 🎮 Game Platforms
+  - RULE-SET, Game-Nintendo, 🎮 Game Platforms
+  - RULE-SET, Game-Origin, 🎮 Game Platforms
+  - RULE-SET, Game-Sony, 🎮 Game Platforms
   
 
   
