@@ -278,7 +278,7 @@ rule-providers:
     type: http
     format: text
     behavior: classical
-    url: 🛑 Global Block, https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
     path: ./ruleset/BanAD.list
     interval: 432000
   BanProgramAD:
