@@ -1064,7 +1064,7 @@ rules:
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,GoogleFCM, 📢 Google FCM
-  - RULE-SET,MS,Ⓜ️ Microsoft Services
+  - RULE-SET,MS,Ⓜ️ MS Services
   - RULE-SET,Apple, 🍎 Apple Services
   - RULE-SET,TG,📲 Telegram Info
   - RUlE-SET,OpenAI, 🤖 OpenAI
