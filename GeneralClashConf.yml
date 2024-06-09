@@ -307,14 +307,14 @@ rule-providers:
     format: text
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
-    path: ./ruleset/Microsoft.list
+    path: ./ruleset/MS-Services.list
     interval: 432000
   Microsoft-Bing:
     type: http
     format: text
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
-    path: ./ruleset/Bing.list
+    path: ./ruleset/MS-Bing.list
     interval: 432000
     Ⓜ️ Microsoft Cloud Drive, 
   Microsoft-OneDrive:
@@ -322,7 +322,7 @@ rule-providers:
     format: text
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
-    path: ./ruleset/OneDrive.list
+    path: ./ruleset/MS-OneDrive.list
   Apple:
     type: http
     format: text
@@ -442,7 +442,7 @@ rules:
   
   - RULE-SET,BanAD, 🛑 Global Block
   - RULE-SET,BanProgramAD, 🍃 Application Ban
-  - RULE-SET,BanProgramAD, 🍃 Application Ban
+  - RULE-SET,Adobe, 🍃 Application Ban
   - RULE-SET,GoogleFCM, 📢 Google FCM
   - RULE-SET, Microsoft-Services, Ⓜ️ MS Services
   - RULE-SET, Microsoft-Bing, Ⓜ️ MS Bing
