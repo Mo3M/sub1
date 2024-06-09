@@ -302,13 +302,27 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
     path: ./ruleset/GoogleFCM.list
     interval: 432000
-  MS:
+  Microsoft-Services:
     type: http
     format: text
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
     path: ./ruleset/Microsoft.list
     interval: 432000
+  Microsoft-Bing:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+    path: ./ruleset/Bing.list
+    interval: 432000
+    Ⓜ️ Microsoft Cloud Drive, 
+  Microsoft-OneDrive:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+    path: ./ruleset/OneDrive.list
   Apple:
     type: http
     format: text
@@ -365,6 +379,14 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
     path: ./ruleset/Proxy-Lite.list
     interval: 432000
+  CF-CIDR:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/CloudflareCIDR.list
+    path: ./ruleset/CloudflareCIDR.list
+    interval: 432000
+
 
 
   
@@ -387,7 +409,9 @@ rules:
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,GoogleFCM, 📢 Google FCM
-  - RULE-SET,MS,Ⓜ️ Microsoft Services
+  - RULE-SET, Microsoft-Services, Ⓜ️ Microsoft Services
+  - RULE-SET, Microsoft-Bing, Ⓜ️ Microsoft Bing
+  - RULE-SET, Microsoft-OneDrive:, Ⓜ️ Microsoft-OneDrive
   - RULE-SET,Apple, 🍎 Apple Services
   - RULE-SET,TG,📲 Telegram Info
   - RUlE-SET,OpenAI, 🤖 OpenAI
@@ -396,6 +420,8 @@ rules:
   - RULE-SET,NetFlix,🎥 Netflix
   - RULE-SET,Foreign-Media,🌍 Foreign Media
   #- RULE_SET,Proxy Lite,🚀 Node Selection
+  - RULE-SET,CF-CIDR,☁️ CloudFlareCDN
+  
 
   
   - GEOIP,IR,DIRECT
