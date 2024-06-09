@@ -444,9 +444,9 @@ rules:
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,BanProgramAD, 🍃 Application Ban
   - RULE-SET,GoogleFCM, 📢 Google FCM
-  - RULE-SET, Microsoft-Services, Ⓜ️ Microsoft Services
-  - RULE-SET, Microsoft-Bing, Ⓜ️ Microsoft Bing
-  - RULE-SET, Microsoft-OneDrive:, Ⓜ️ Microsoft-OneDrive
+  - RULE-SET, Microsoft-Services, Ⓜ️ MS Services
+  - RULE-SET, Microsoft-Bing, Ⓜ️ MS Bing
+  - RULE-SET, Microsoft-OneDrive:, Ⓜ️ MS OneDrive
   - RULE-SET,Apple, 🍎 Apple Services
   - RULE-SET,TG,📲 Telegram Info
   - RUlE-SET,OpenAI, 🤖 OpenAI
