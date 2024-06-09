@@ -378,6 +378,8 @@ rule-providers:
 
 rules:
   - RULE-SET, reject, 🛑 Global Block
+    #- RULE-SET,oisd_big,REJECT
+  - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET,iran_ads, 🛑 Global Block
   
   - RULE-SET,BanAD, 🛑 Global Block
@@ -398,6 +400,4 @@ rules:
   - GEOIP,IR,DIRECT
   - DOMAIN-SUFFIX,ir,DIRECT
   - RULE-SET,iran_other_sites, 🎯 Global Direct Connection
-  #- RULE-SET,oisd_big,REJECT
-  - RULE-SET,oisd_big,🛑 Global Block
   - MATCH,🐟 Free Fish
