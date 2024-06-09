@@ -463,7 +463,7 @@ rules:
   
 
   
-  - GEOIP,IR,DIRECT
-  - DOMAIN-SUFFIX,ir,DIRECT
+  - GEOIP,IR, 🎯 Global Direct
+  - DOMAIN-SUFFIX,ir, 🎯 Global Direct
   - RULE-SET,iran_other_sites, 🎯 Global Direct
   - MATCH,🐟 Free Fish
