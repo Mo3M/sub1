@@ -445,12 +445,12 @@ rules:
   - RULE-SET,GoogleFCM,📢 Google FCM
   - RULE-SET, Microsoft-Services,Ⓜ️ MS Services
   - RULE-SET, Microsoft-Bing,Ⓜ️ MS Bing
-  - RULE-SET, Microsoft-OneDrive:,Ⓜ️ MS OneDrive
+  - RULE-SET, Microsoft-OneDrive,Ⓜ️ MS OneDrive
   - RULE-SET,Apple, 🍎 Apple Services
   - RULE-SET,TG,📲 Telegram Info
   - RUlE-SET,OpenAI, 🤖 OpenAI
   - RUlE-SET,AI, 🤖 OpenAI
-  - RULE-SET,YT,📹 YouTube video
+  - RULE-SET,YT,📹 YouTube
   - RULE-SET,NetFlix,🎥 Netflix
   - RULE-SET,Foreign-Media,🌍 Foreign Media
   #- RULE_SET,Proxy Lite,🚀 Node Selection
