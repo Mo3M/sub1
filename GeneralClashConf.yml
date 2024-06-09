@@ -315,8 +315,7 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
     path: ./ruleset/MS-Bing.list
-    interval: 432000
-    Ⓜ️ Microsoft Cloud Drive, 
+    interval: 432000    
   Microsoft-OneDrive:
     type: http
     format: text
