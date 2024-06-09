@@ -447,7 +447,7 @@ rules:
   - RULE-SET, Microsoft-Bing,Ⓜ️ MS Bing
   - RULE-SET, Microsoft-OneDrive,Ⓜ️ MS OneDrive
   - RULE-SET,Apple, 🍎 Apple Services
-  - RULE-SET,TG,📲 Telegram Info
+  - RULE-SET,TG,📲 Telegram
   - RUlE-SET,OpenAI, 🤖 OpenAI
   - RUlE-SET,AI, 🤖 OpenAI
   - RULE-SET,YT,📹 YouTube
