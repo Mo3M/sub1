@@ -76,12 +76,13 @@ dns:
      - '*.and'
      - localhost.ptlogin2.qq.com
   nameserver:
+    - https://dns.google/dns-query # added by 3M
+    - https://dns.cloudflare.com/dns-query # added by 3M
     - tls://8.26.56.26 # added by 3M
     - udp://8.26.56.26 # added by 3M
     - 119.29.29.29
     - 223.5.5.5
-    - https://dns.google/dns-query # added by 3M
-    - https://dns.cloudflare.com/dns-query # added by 3M
+
   fallback:
     - 8.8.8.8
     - 8.8.4.4
