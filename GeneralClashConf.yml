@@ -442,7 +442,7 @@ rule-providers:
 
 rules:
   - RULE-SET,oisd_big,🛑 Global Block
-  - RULE-SET, reject, 🛑 Global Block
+#  - RULE-SET, reject, 🛑 Global Block
     #- RULE-SET,oisd_big,REJECT
   
   - RULE-SET,iran_ads, 🛑 Global Block
