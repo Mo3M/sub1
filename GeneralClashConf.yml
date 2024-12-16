@@ -443,15 +443,15 @@ rule-providers:
     
 
 rules:
- # - PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
- # - PROCESS-NAME, com.waze, 🐟 Free Fish
-#  - RULE-SET,oisd_big,🛑 Global Block
-#  - RULE-SET, reject, 🛑 Global Block
+  - PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
+  - PROCESS-NAME, com.waze, 🐟 Free Fish
+  - RULE-SET,oisd_big,🛑 Global Block
+  - RULE-SET, reject, 🛑 Global Block
     #- RULE-SET,oisd_big,REJECT
   
-#  - RULE-SET,iran_ads, 🛑 Global Block
+  - RULE-SET,iran_ads, 🛑 Global Block
   
-#  - RULE-SET,BanAD, 🛑 Global Block
+  - RULE-SET,BanAD, 🛑 Global Block
   - RULE-SET,BanProgramAD,🍃 Application Ban
   - RULE-SET,Adobe,🍃 Application Ban
   - RULE-SET,GoogleFCM,📢 Google FCM
