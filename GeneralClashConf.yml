@@ -66,6 +66,8 @@ experimental:
 global-client-fingerprint: chrome #3m
 # !!! note Optional: chrome, firefox, safari, iOS, android, edge, 360, qq, random, If selected random, a modern browser fingerprint is probabilistically generated based on Cloudflare Radar data.
 
+enable-process: true # 3M
+
 dns:
   enabled: true
   ipv6: true
@@ -441,6 +443,7 @@ rule-providers:
     
 
 rules:
+  - PROCESS-NAME, com.waze, 🐟 Free Fish
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
     #- RULE-SET,oisd_big,REJECT
