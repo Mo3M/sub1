@@ -443,6 +443,7 @@ rule-providers:
     
 
 rules:
+  - PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   - PROCESS-NAME, com.waze, 🐟 Free Fish
 #  - RULE-SET,oisd_big,🛑 Global Block
 #  - RULE-SET, reject, 🛑 Global Block
