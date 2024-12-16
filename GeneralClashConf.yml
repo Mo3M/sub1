@@ -444,8 +444,8 @@ rule-providers:
 
 rules:
   - PROCESS-NAME, com.waze, 🐟 Free Fish
-  - RULE-SET,oisd_big,🛑 Global Block
-  - RULE-SET, reject, 🛑 Global Block
+#  - RULE-SET,oisd_big,🛑 Global Block
+#  - RULE-SET, reject, 🛑 Global Block
     #- RULE-SET,oisd_big,REJECT
   
   - RULE-SET,iran_ads, 🛑 Global Block
