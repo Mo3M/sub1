@@ -68,6 +68,15 @@ global-client-fingerprint: chrome #3m
 
 enable-process: true # 3M
 
+#------------------------- added by 3M
+# The interval for TCP Keep Alive packets, measured in seconds.
+keep-alive-interval: 15
+# The maximum idle time for TCP Keep Alive.
+keep-alive-idle: 15
+# Disable TCP Keep Alive; on Android, this is set to true by default.
+disable-keep-alive: false
+#------------------------- end
+
 dns:
   enabled: true
   ipv6: true
