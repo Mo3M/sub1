@@ -114,8 +114,8 @@ dns:
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - '*.lan'
-  nameserver-policy:
-    '+.arpa': '10.0.0.1'
+ # nameserver-policy:
+   # '+.arpa': '10.0.0.1'
    # 'rule-set:cn':
    # - https://doh.pub/dns-query
   #  - https://dns.alidns.com/dns-query
