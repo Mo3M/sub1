@@ -127,17 +127,6 @@ dns:
     - tls://1.1.1.1
   proxy-server-nameserver:
     - https://doh.pub/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    geosite:
-      - gfw
-    ipcidr:
-      - 240.0.0.0/4
-    domain:
-      - '+.google.com'
-      - '+.facebook.com'
-      - '+.youtube.com'
 
 
 #dns:
