@@ -99,7 +99,7 @@ sniffer:
   #skip-dst-address:
     #- 192.168.0.3/32
 dns:
-  enabled: true
+  enabled: false
 
   prefer-h3: false
   #use-hosts: true
