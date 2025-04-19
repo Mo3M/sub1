@@ -78,7 +78,7 @@ disable-keep-alive: false
 #------------------------- end
 
 sniffer:
-  enable: false #false
+  enable: true #false
   force-dns-mapping: true
   parse-pure-ip: true
   override-destination: false
@@ -99,7 +99,7 @@ sniffer:
   #skip-dst-address:
     #- 192.168.0.3/32
 dns:
-  enabled: false
+  enabled: true
 
   prefer-h3: false
   #use-hosts: true
@@ -108,12 +108,12 @@ dns:
   
   ipv6: false #3m changed it
   listen: 0.0.0.0:53
-  enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
-  fake-ip-range: 198.18.0.1/16 #
-  fake-ip-filter-mode: blacklist # new
-  fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
-     - '*.and'
-     - localhost.ptlogin2.qq.com
+  #enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
+  #fake-ip-range: 198.18.0.1/16 #
+  #fake-ip-filter-mode: blacklist # new
+  #fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
+    # - '*.and'
+     #- localhost.ptlogin2.qq.com
   default-nameserver:
     - 223.5.5.5
   nameserver:
