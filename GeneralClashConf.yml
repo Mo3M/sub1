@@ -78,7 +78,7 @@ disable-keep-alive: false
 #------------------------- end
 
 sniffer:
-  enable: true #false
+  enable: false #false
   force-dns-mapping: true
   parse-pure-ip: true
   override-destination: false
@@ -105,7 +105,7 @@ dns:
   enabled: true
   ipv6: false #3m changed it
   listen: 0.0.0.0:53
-  # enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
+  enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
   fake-ip-range: 198.18.0.1/16 #
   fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
      - '*.and'
