@@ -117,19 +117,19 @@ dns:
   default-nameserver:
     - 223.5.5.5
   nameserver:
-    #- http://9.9.9.9
+    - http://9.9.9.9
     - https://doh.sandbox.opendns.com/dns-query
     #- https://doh.opendns.com/dns-query
-    #- https://dns.alidns.com/dns-query
-    #- 9.9.9.9 # added by 3M
-    #- 208.67.222.222 # added by 3M
+    - https://dns.alidns.com/dns-query
+    - 9.9.9.9 # added by 3M
+    - 208.67.222.222 # added by 3M
 
-    #- tls://8.26.56.26 # added by 3M
-    #- udp://8.26.56.26 # added by 3M
-    #- 119.29.29.29
-    #- 223.5.5.5
-    #- https://dns.google/dns-query # added by 3M
-    #- https://dns.cloudflare.com/dns-query # added by 3M
+    - tls://8.26.56.26 # added by 3M
+    - udp://8.26.56.26 # added by 3M
+    - 119.29.29.29
+    - 223.5.5.5
+    - https://dns.google/dns-query # added by 3M
+    - https://dns.cloudflare.com/dns-query # added by 3M
     #- 172.67.37.81 # added by 3M
   fallback:
     - https://doh.sandbox.opendns.com/dns-query
