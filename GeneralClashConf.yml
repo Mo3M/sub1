@@ -115,8 +115,7 @@ dns:
     # - '*.and'
      #- localhost.ptlogin2.qq.com
   default-nameserver:
-    #- 223.5.5.5
-    - https://doh.sandbox.opendns.com/dns-query
+    - 223.5.5.5
   nameserver:
     #- http://9.9.9.9
     - https://doh.sandbox.opendns.com/dns-query
