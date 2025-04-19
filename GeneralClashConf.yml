@@ -98,42 +98,47 @@ sniffer:
     #- 192.168.0.3/32
   #skip-dst-address:
     #- 192.168.0.3/32
-
-
-
 dns:
-  enabled: true
-
-  #prefer-h3: false
-  #use-hosts: true
-  #use-system-hosts: true
-
-  
-  ipv6: false #3m changed it
+  enable: true
+  cache-algorithm: arc
+  prefer-h3: false
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: false
   listen: 0.0.0.0:1053
-  enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
-  fake-ip-range: 198.18.0.1/16 #
-  fake-ip-filter-mode: blacklist # new
-  fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
-     - '*.and'
-     - localhost.ptlogin2.qq.com
-  nameserver:
-    - 9.9.9.9 # added by 3M
-    - 208.67.222.222 # added by 3M
-
-    - tls://8.26.56.26 # added by 3M
-    - udp://8.26.56.26 # added by 3M
-    - 119.29.29.29
+  ipv6: false
+  default-nameserver:
     - 223.5.5.5
-    - https://dns.google/dns-query # added by 3M
-    - https://dns.cloudflare.com/dns-query # added by 3M
-    - 172.67.37.81 # added by 3M
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - '*.lan'
+  nameserver-policy:
+    '+.arpa': '10.0.0.1'
+    'rule-set:cn':
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   fallback:
-    - 8.8.8.8
-    - 8.8.4.4
-    - 1.1.1.1
-    - tls://1.0.0.1:853
-    - tls://dns.google:853
+    - tls://8.8.4.4
+    - tls://1.1.1.1
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+
 
 #dns:
   #enable: true # Whether to enable dns false
