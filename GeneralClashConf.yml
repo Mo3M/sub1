@@ -104,13 +104,13 @@ sniffer:
 dns:
   enabled: true
 
-  prefer-h3: false
-  use-hosts: true
-  use-system-hosts: true
+  #prefer-h3: false
+  #use-hosts: true
+  #use-system-hosts: true
 
   
   ipv6: false #3m changed it
-  listen: 0.0.0.0:53
+  listen: 0.0.0.0:1053
   enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
   fake-ip-range: 198.18.0.1/16 #
   fake-ip-filter-mode: blacklist # new
