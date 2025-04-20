@@ -67,6 +67,12 @@ global-client-fingerprint: chrome #3m
 # !!! note Optional: chrome, firefox, safari, iOS, android, edge, 360, qq, random, If selected random, a modern browser fingerprint is probabilistically generated based on Cloudflare Radar data.
 
 enable-process: true # 3M
+find-process-mode: strict
+
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: [any:53]
 
 #------------------------- added by 3M
 # The interval for TCP Keep Alive packets, measured in seconds.
@@ -76,6 +82,7 @@ keep-alive-idle: 15
 # Disable TCP Keep Alive; on Android, this is set to true by default.
 disable-keep-alive: false
 #------------------------- end
+unified-delay: true
 
 sniffer:
   enable: true #false
@@ -105,7 +112,7 @@ dns:
   prefer-h3: false
   #use-hosts: true
   #use-system-hosts: true
-
+  respect-rules: true
   
   ipv6: false #3m changed it
   listen: 0.0.0.0:53
