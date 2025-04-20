@@ -112,8 +112,8 @@ dns:
   #fake-ip-range: 198.18.0.1/16 #
   ##fake-ip-filter-mode: blacklist # new
   #fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
-     - '*.and'
-     - localhost.ptlogin2.qq.com
+     #- '*.and'
+     #- localhost.ptlogin2.qq.com
   default-nameserver:
     - 223.5.5.5
   nameserver:
