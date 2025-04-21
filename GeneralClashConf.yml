@@ -107,49 +107,51 @@ sniffer:
     #- 192.168.0.3/32
 
 dns:
-  enable: true
-  listen: ':53'
-  enhanced-mode: 'fake-ip'
-  fake-ip-range: '198.18.0.1/16'
-  fake-ip-filter-mode: 'blacklist'
+  enabled: true
+
   prefer-h3: false
-  respect-rules: false
-  use-hosts: false
-  use-system-hosts: false
-  fake-ip-filter:
-    - '*.lan'
-    - '*.local'
-    - '*.arpa'
-    - 'time.*.com'
-    - 'ntp.*.com'
-    - 'time.*.com'
-    - '+.market.xiaomi.com'
-    - 'localhost.ptlogin2.qq.com'
-    - '*.msftncsi.com'
-    - 'www.msftconnecttest.com'
+  #use-hosts: true
+  #use-system-hosts: true
+  respect-rules: true
+  
+  ipv6: false #3m changed it
+  listen: 0.0.0.0:53
+  enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
+  #fake-ip-range: 198.18.0.1/16 #
+  ##fake-ip-filter-mode: blacklist # new
+  #fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
+     #- '*.and'
+     #- localhost.ptlogin2.qq.com
   default-nameserver:
-    - 'system'
-    - '223.6.6.6'
-    - '8.8.8.8'
+    - 9.9.9.9
+    - 223.5.5.5
+    - https://doh.sandbox.opendns.com/dns-query
   nameserver:
-    - '8.8.8.8'
-    - 'https://doh.pub/dns-query'
-    - 'https://dns.alidns.com/dns-query'
-  direct-nameserver-follow-policy: false
-  fallback-filter:
-    geoip: true
-    geoip-code: 'IR'
-    ipcidr:
-      - '240.0.0.0/4'
-      - '0.0.0.0/32'
-    domain:
-      - '+.google.com'
-      - '+.facebook.com'
-      - '+.youtube.com'
+    - http://9.9.9.9
+    - https://doh.sandbox.opendns.com/dns-query
+    - https://doh.opendns.com/dns-query
+    - https://dns.alidns.com/dns-query
+    - 9.9.9.9 # added by 3M
+    - 208.67.222.222 # added by 3M
+
+    - tls://8.26.56.26 # added by 3M
+    - udp://8.26.56.26 # added by 3M
+    - 119.29.29.29
+    - 223.5.5.5
+    - https://dns.google/dns-query # added by 3M
+    - https://dns.cloudflare.com/dns-query # added by 3M
+    #- 172.67.37.81 # added by 3M
   proxy-server-nameserver:
-    - 'https://doh.pub/dns-query'
-    - 'https://dns.alidns.com/dns-query'
-    - 'tls://223.5.5.5'
+    - https://223.5.5.5/dns-query
+    - tls://223.5.5.5
+  fallback:
+    - https://doh.sandbox.opendns.com/dns-query
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.1.1.1
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+
 #_________________________________________________________________________________________________________________________
 
 
