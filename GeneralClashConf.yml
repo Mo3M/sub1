@@ -125,7 +125,7 @@ dns:
   default-nameserver:
     - 9.9.9.9
     - 223.5.5.5
-    - https://doh.sandbox.opendns.com/dns-query
+    #- https://doh.sandbox.opendns.com/dns-query
   nameserver:
     - http://9.9.9.9
     - https://doh.sandbox.opendns.com/dns-query
