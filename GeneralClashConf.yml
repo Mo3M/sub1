@@ -544,8 +544,8 @@ rules:
   - MATCH,🐟 Free Fish
 
 sub-rules:
-  rule1:
-  - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
+  - rule1:
+    - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
  #   - MATCH,PROXY
  # sub-rule2:
  #   - IP-CIDR,1.1.1.1/32,REJECT
