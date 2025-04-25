@@ -504,13 +504,20 @@ rule-providers:
 
 sub-rules:
   rule1:
-  - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
- #   - MATCH,PROXY
- # sub-rule2:
- #   - IP-CIDR,1.1.1.1/32,REJECT
- #   - IP-CIDR,8.8.8.8/32,ss1
- #   - DOMAIN,dns.alidns.com,REJECT
+    # BT
+    - SRC-IP-CIDR,192.168.11.8/32,DIRECT
 
+    - DOMAIN-SUFFIX,wttr.in,DIRECT
+    - GEOSITE,apple,DIRECT
+    - GEOSITE,category-pt,DIRECT
+    - RULE-SET,apple,DIRECT
+    - RULE-SET,applications,DIRECT
+    - RULE-SET,cncidr,DIRECT
+    - RULE-SET,icloud,DIRECT
+    - RULE-SET,lancidr,DIRECT
+    - RULE-SET,private,DIRECT
+    - GEOIP,LAN,DIRECT
+    - GEOIP,CN,DIRECT
 rules:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
