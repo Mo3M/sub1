@@ -504,7 +504,8 @@ rule-providers:
     
 sub-rules:
   rule1:
-    - DOMAIN-SUFFIX, bgp.tools, 🎯 Global Direct
+    - DOMAIN-SUFFIX,bgp.tools,🎯 Global Direct
+    - DOMAIN,bgp.tools,🎯 Global Direct
 
 rules:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
