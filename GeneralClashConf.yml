@@ -502,10 +502,10 @@ rule-providers:
     url: https://raw.githubusercontent.com/hillz2/openclash_adblock/main/oisd_big.yaml
     interval: 28800 # Update rules every 8 hours
 
-sub-rules:
-  rule1:
+#sub-rules:
+  #rule1:
     # BT
-    - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
+    #- DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
     #- SRC-IP-CIDR,192.168.11.8/32,DIRECT
 
     #- DOMAIN-SUFFIX,wttr.in,DIRECT
