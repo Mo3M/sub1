@@ -501,7 +501,15 @@ rule-providers:
     path: "./rule_provider/oisd_big.yaml"
     url: https://raw.githubusercontent.com/hillz2/openclash_adblock/main/oisd_big.yaml
     interval: 28800 # Update rules every 8 hours
-    
+
+sub-rules:
+- rule1:
+- DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
+ #   - MATCH,PROXY
+ # sub-rule2:
+ #   - IP-CIDR,1.1.1.1/32,REJECT
+ #   - IP-CIDR,8.8.8.8/32,ss1
+ #   - DOMAIN,dns.alidns.com,REJECT
 
 rules:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
@@ -542,12 +550,3 @@ rules:
   - DOMAIN-SUFFIX,ir, 🎯 Global Direct
   - RULE-SET,iran_other_sites, 🎯 Global Direct
   - MATCH,🐟 Free Fish
-
-sub-rules:
-  - rule1:
-    - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
- #   - MATCH,PROXY
- # sub-rule2:
- #   - IP-CIDR,1.1.1.1/32,REJECT
- #   - IP-CIDR,8.8.8.8/32,ss1
- #   - DOMAIN,dns.alidns.com,REJECT
