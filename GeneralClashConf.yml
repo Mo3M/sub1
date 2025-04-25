@@ -513,7 +513,7 @@ sub-rules:
 rules:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
-  - SUB-RULE,(NETWORK,TCP),sub-rules
+  - SUB-RULE,(NETWORK,TCP),sub-rule
   
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
