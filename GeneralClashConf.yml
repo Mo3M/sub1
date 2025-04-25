@@ -503,14 +503,17 @@ rule-providers:
     interval: 28800 # Update rules every 8 hours
     
 sub-rules:
-  sub-one:
-    - DOMAIN-SUFFIX,bgp.tools,🎯 Global Direct
-    - DOMAIN,bgp.tools,🎯 Global Direct
-
+  rule1:
+    - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
+ #   - MATCH,PROXY
+ # sub-rule2:
+ #   - IP-CIDR,1.1.1.1/32,REJECT
+ #   - IP-CIDR,8.8.8.8/32,ss1
+ #   - DOMAIN,dns.alidns.com,REJECT
 rules:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
-  - SUB-RULE,(NETWORK,TCP),sub-one
+  - SUB-RULE,(NETWORK,TCP),rule1
   
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
