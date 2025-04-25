@@ -503,14 +503,14 @@ rule-providers:
     interval: 28800 # Update rules every 8 hours
     
 sub-rules:
-  sub-rule1:
+  sub-one:
     - DOMAIN-SUFFIX,bgp.tools,🎯 Global Direct
     - DOMAIN,bgp.tools,🎯 Global Direct
 
 rules:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
-  - SUB-RULE,(NETWORK,TCP),sub-rule1
+  - SUB-RULE,(NETWORK,TCP),sub-one
   
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
