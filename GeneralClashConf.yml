@@ -310,7 +310,7 @@ cfw-proxies-order: default
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
 
 
-Proxies: ~
+proxies: ~
 proxy-groups: ~
 
 rule-providers:
