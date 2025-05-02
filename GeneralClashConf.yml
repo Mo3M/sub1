@@ -519,8 +519,8 @@ rule-providers:
     #- RULE-SET,private,DIRECT
     #- GEOIP,LAN,DIRECT
     #- GEOIP,CN,DIRECT
-;rules:
-Rule:
+rules:
+#Rule:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
   #- SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
