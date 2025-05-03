@@ -523,6 +523,7 @@ rule-providers:
     #- RULE-SET,private,DIRECT
     #- GEOIP,LAN,DIRECT
     #- GEOIP,CN,DIRECT
+rules: ~
 rules:
 #Rule:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
