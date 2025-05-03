@@ -424,7 +424,42 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
     path: ./ruleset/ai.list
-    interval: 432000    
+    interval: 432000
+
+  Copilot:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Copilot.list
+    path: ./ruleset/Copilot.list
+    interval: 432000
+
+
+  GithubCopilot:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/GithubCopilot.list
+    path: ./ruleset/GithubCopilot.list
+    interval: 432000
+  Claude:
+    type: http
+    format: text
+    behavior: classical
+    url:  https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Claude.list
+    path: ./ruleset/Claude.list 
+    interval: 432000
+
+  Gemini:
+    type: http
+    format: text
+    behavior: classical
+    url:  https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Gemini.list
+    path: ./ruleset/Gemini.list 
+    interval: 432000
+
+
+  
   YT:
     type: http
     format: text
