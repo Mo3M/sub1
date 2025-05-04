@@ -310,8 +310,10 @@ cfw-proxies-order: default
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
 
 
-proxies: {{proxy}}
-proxy-groups: {{proxy-groups}}
+#proxies: {{proxy}}
+#proxy-groups: {{proxy-groups}}
+proxies: ~
+proxy-groups: ~
 #==================================================================================== START
 # I deactivatd 2 following lines because I disabled creating them in SUB.INI.
 #rule-providers: ~
