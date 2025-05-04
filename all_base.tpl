@@ -375,6 +375,7 @@ enhanced-mode-by-rule = true
     ],
     "outbounds": [],
     "route": {
+        "rule_set": [],
         "rules": [],
         "auto_detect_interface": true
     },
