@@ -312,8 +312,15 @@ cfw-proxies-order: default
 
 proxies: ~
 proxy-groups: ~
+#==================================================================================== START
+# I deactivatd 2 following lines because I disabled creating them in SUB.INI.
+#rule-providers: ~
+#rules: ~
+#==================================================================================== END
 
-rule-providers: ~
+
+#==================================================================================== START
+# For test purposes although I couldn't make it work.
 #sub-rules:
   #rule1:
     # BT
@@ -331,53 +338,273 @@ rule-providers: ~
     #- RULE-SET,private,DIRECT
     #- GEOIP,LAN,DIRECT
     #- GEOIP,CN,DIRECT
-rules: ~
+#==================================================================================== END
+
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  iran_other_sites:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_other.txt"
+    path: ./ruleset/iran_other.txt
+    interval: 432000
+  iran_ads:
+    type: http
+    format: text
+    behavior: domain
+    url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.txt"
+    path: ./ruleset/iran_ads.txt
+    interval: 432000
+
+#  ads:
+#    type: http
+#    format: text
+#    behavior: domain
+#    url: "https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt"
+#    path: ./ruleset/ads.txt
+#    interval: 86400
+
+#  lancidr:
+#    type: http
+#    behavior: ipcidr
+#    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+#    path: ./ruleset/lancidr.yaml
+#    interval: 86400
+  BanAD:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    interval: 432000
+  BanProgramAD:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    interval: 432000
+  Adobe:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/adobe.list
+    path: ./ruleset/adobe.list
+    interval: 432000
+  GoogleFCM:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    interval: 432000
+  Microsoft-Services:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./ruleset/MS-Services.list
+    interval: 432000
+  Microsoft-Bing:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+    path: ./ruleset/MS-Bing.list
+    interval: 432000    
+  Microsoft-OneDrive:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+    path: ./ruleset/MS-OneDrive.list
+  Apple:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./ruleset/Apple.list
+    interval: 432000
+  TG:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./ruleset/Telegram.list
+    interval: 432000    
+  OpenAI:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+    path: ./ruleset/OpenAi.list
+    interval: 432000
+  AI:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
+    path: ./ruleset/ai.list
+    interval: 432000
+
+  Copilot:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Copilot.list
+    path: ./ruleset/Copilot.list
+    interval: 432000
 
 
-#rules:
+  GithubCopilot:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/GithubCopilot.list
+    path: ./ruleset/GithubCopilot.list
+    interval: 432000
+  Claude:
+    type: http
+    format: text
+    behavior: classical
+    url:  https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Claude.list
+    path: ./ruleset/Claude.list 
+    interval: 432000
+  Gemini:
+    type: http
+    format: text
+    behavior: classical
+    url:  https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Gemini.list
+    path: ./ruleset/Gemini.list 
+    interval: 432000  
+  YT:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+    path: ./ruleset/YouTube.list
+    interval: 432000
+  NetFlix:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+    path: ./ruleset/Netflix.list
+    interval: 432000  
+  Foreign-Media:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./ruleset/Foreign-Media.list
+    interval: 432000
+  Proxy Lite:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./ruleset/Proxy-Lite.list
+    interval: 432000
+  CF-CIDR:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/CloudflareCIDR.list
+    path: ./ruleset/CloudflareCIDR.list
+    interval: 432000    
+  NetEaseMusic:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetEaseMusic.list
+    path: ./ruleset/NetEaseMusic.list
+    interval: 432000
+  Game-Epic:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+    path: ./ruleset/Game-Epic.list
+    interval: 432000
+  Game-Nintendo:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list
+    path: ./ruleset/Game-Nintendo.list
+    interval: 432000
+  Game-Origin:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+    path: ./ruleset/Game-Origin.list
+    interval: 432000  
+  Game-Sony:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+    path: ./ruleset/Game-Sony.list
+    interval: 432000  
+  oisd_big:
+    type: http
+    behavior: classical
+    path: "./rule_provider/oisd_big.yaml"
+    url: https://raw.githubusercontent.com/hillz2/openclash_adblock/main/oisd_big.yaml
+    interval: 28800 # Update rules every 8 hours
+
+
+rules:
 ##Rule:
-#  #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
-#  #- PROCESS-NAME, com.waze, 🐟 Free Fish
-#  #- SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
-#  
-#  - RULE-SET,oisd_big,🛑 Global Block
-#  - RULE-SET, reject, 🛑 Global Block
-#    #- RULE-SET,oisd_big,REJECT
-#  
-#  - RULE-SET,iran_ads, 🛑 Global Block
-#  
-#  - RULE-SET,BanAD, 🛑 Global Block
-#  - RULE-SET,BanProgramAD,🍃 Application Ban
-#  - RULE-SET,Adobe,🍃 Application Ban
-#  - RULE-SET,GoogleFCM,📢 Google FCM
-#  - RULE-SET, Microsoft-Services,Ⓜ️ MS Services
-#  - RULE-SET, Microsoft-Bing,Ⓜ️ MS Bing
-#  - RULE-SET, Microsoft-OneDrive,Ⓜ️ MS OneDrive
-#  - RULE-SET,Apple, 🍎 Apple Services
-#  - RULE-SET,TG,📲 Telegram
+  #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
+  #- PROCESS-NAME, com.waze, 🐟 Free Fish
+  #- SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
+  
+  - RULE-SET,oisd_big,🛑 Global Block
+  - RULE-SET, reject, 🛑 Global Block
+    #- RULE-SET,oisd_big,REJECT
+  
+  - RULE-SET,iran_ads, 🛑 Global Block
+  
+  - RULE-SET,BanAD, 🛑 Global Block
+  - RULE-SET,BanProgramAD,🍃 Application Ban
+  - RULE-SET,Adobe,🍃 Application Ban
+  - RULE-SET,GoogleFCM,📢 Google FCM
+  - RULE-SET, Microsoft-Services,Ⓜ️ MS Services
+  - RULE-SET, Microsoft-Bing,Ⓜ️ MS Bing
+  - RULE-SET, Microsoft-OneDrive,Ⓜ️ MS OneDrive
+  - RULE-SET,Apple, 🍎 Apple Services
+  - RULE-SET,TG,📲 Telegram
 
-#  - RUlE-SET,OpenAI, 🤖 OpenAI
-#  - RUlE-SET,AI, 🤖 OpenAI
-#  - RUlE-SET,Claude, 🤖 OpenAI
-#  - RUlE-SET,Gemini, 🤖 OpenAI
-#  - RUlE-SET,GithubCopilot, 🤖 OpenAI
-#  - RUlE-SET,Copilot, 🤖 OpenAI
+  - RUlE-SET,OpenAI, 🤖 OpenAI
+  - RUlE-SET,AI, 🤖 OpenAI
+  - RUlE-SET,Claude, 🤖 OpenAI
+  - RUlE-SET,Gemini, 🤖 OpenAI
+  - RUlE-SET,GithubCopilot, 🤖 OpenAI
+  - RUlE-SET,Copilot, 🤖 OpenAI
 
-#  - RULE-SET,YT,📹 YouTube
-#  - RULE-SET,NetFlix,🎥 Netflix
-#  - RULE-SET,Foreign-Media,🌍 Foreign Media
-#  #- RULE_SET,Proxy Lite,🚀 Node Selection
-#  - RULE-SET, CF-CIDR,☁️ CloudFlareCDN
-#  - RULE-SET, NetEaseMusic,🎶 NetEase Music
-#  - RULE-SET, Game-Epic, 🎮 Game Platforms
-#  - RULE-SET, Game-Nintendo, 🎮 Game Platforms
-#  - RULE-SET, Game-Origin, 🎮 Game Platforms
-#  - RULE-SET, Game-Sony, 🎮 Game Platforms
-#  
-#
-#  
-#  - GEOIP,IR, 🎯 Global Direct
-#  - DOMAIN-SUFFIX,ir, 🎯 Global Direct
-#  - RULE-SET,iran_other_sites, 🎯 Global Direct
-#  - MATCH,🐟 Free Fish
+  - RULE-SET,YT,📹 YouTube
+  - RULE-SET,NetFlix,🎥 Netflix
+  - RULE-SET,Foreign-Media,🌍 Foreign Media
+  #- RULE_SET,Proxy Lite,🚀 Node Selection
+  - RULE-SET, CF-CIDR,☁️ CloudFlareCDN
+  - RULE-SET, NetEaseMusic,🎶 NetEase Music
+  - RULE-SET, Game-Epic, 🎮 Game Platforms
+  - RULE-SET, Game-Nintendo, 🎮 Game Platforms
+  - RULE-SET, Game-Origin, 🎮 Game Platforms
+  - RULE-SET, Game-Sony, 🎮 Game Platforms
+  
+
+  
+  - GEOIP,IR, 🎯 Global Direct
+  - DOMAIN-SUFFIX,ir, 🎯 Global Direct
+  - RULE-SET,iran_other_sites, 🎯 Global Direct
+  - MATCH,🐟 Free Fish
 #
