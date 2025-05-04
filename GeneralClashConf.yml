@@ -327,13 +327,13 @@ rule-providers:
     url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_other.txt"
     path: ./ruleset/iran_other.txt
     interval: 432000
-  iran_ads:
-    type: http
-    format: text
-    behavior: domain
-    url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.txt"
-    path: ./ruleset/iran_ads.txt
-    interval: 432000
+#  iran_ads:
+#    type: http
+#    format: text
+#    behavior: domain
+#    url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.txt"
+#    path: ./ruleset/iran_ads.txt
+#    interval: 432000
 
 #  ads:
 #    type: http
