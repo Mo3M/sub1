@@ -311,7 +311,7 @@ cfw-proxies-order: default
 
 
 proxies: {{proxy}}
-proxy-groups: {{proxy_groups}}
+proxy-groups: {{proxy-groups}}
 #==================================================================================== START
 # I deactivatd 2 following lines because I disabled creating them in SUB.INI.
 #rule-providers: ~
