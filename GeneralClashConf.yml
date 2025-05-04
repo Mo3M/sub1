@@ -582,8 +582,14 @@ rules: ~
 #  - RULE-SET, Microsoft-OneDrive,Ⓜ️ MS OneDrive
 #  - RULE-SET,Apple, 🍎 Apple Services
 #  - RULE-SET,TG,📲 Telegram
+
 #  - RUlE-SET,OpenAI, 🤖 OpenAI
 #  - RUlE-SET,AI, 🤖 OpenAI
+#  - RUlE-SET,Claude, 🤖 OpenAI
+#  - RUlE-SET,Gemini, 🤖 OpenAI
+#  - RUlE-SET,GithubCopilot, 🤖 OpenAI
+#  - RUlE-SET,Copilot, 🤖 OpenAI
+
 #  - RULE-SET,YT,📹 YouTube
 #  - RULE-SET,NetFlix,🎥 Netflix
 #  - RULE-SET,Foreign-Media,🌍 Foreign Media
