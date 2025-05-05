@@ -1,41 +1,30 @@
-
 #---------------------------------------------------#
 # The configuration file needs to be placed in $HOME/.config/clash/config.yml
 # Or run config.yml in the directory
 #---------------------------------------------------#
 # Mixed port HTTP and SOCKS5 use one port
 mixed-port: 7890
-
 # HTTP proxy port
 # port: 7890
-
 # SOCKS5 proxy port
 socks-port: 7891
-
 # redir proxy port for Linux and macOS (uncomment if you want to use this feature)
 # run-port: 7892
-
 # Allow LAN connections (can be used to share proxies)
 allow-lan: true
-
 # Only applies if allow-lan is set to true
 # #"*": bind all IP addresses
 # #192.168.122.11: Bind a single IPv4 address
 # #"[aaaa::a8aa:ff:fe09:57d8]": Bind a single IPv6 address
 bind-address: "*"
 ipv6: true
-
 # Rule mode: rule (rule) / global (global proxy) / direct (global direct connection) / script (script)
 mode: rule
-
 # Set the log output level (default level: silent, which means no output to avoid program memory overflow due to excessive log content).
 # 5 levels: silent / error / warning / info / debug. The higher the level, the larger the log output, and the more inclined to debugging. Please enable it if necessary.
 log-level: info
-
-
 # Clash 的 RESTful API
 external-controller: '127.0.0.1:9090'
-
 # You can place static web resources (such as clash-dashboard) in a directory, and clash will serve `RESTful API/ui`
 # The parameter should be filled in with the relative path or absolute path of the configuration directory.
 # http://127.0.0.1:9090/ui/#/
@@ -43,20 +32,16 @@ external-controller: '127.0.0.1:9090'
 # yacd panel: https://github.com/haishanh/yacd
 # Razord panel: http://clash.razord.top/#/proxies
 # external-ui: dashboard
-
 # RESTful API password (optional)
 # secret: ""
-
 # Experimental Features
 #experimental:
  # ignore-resolve-fail: true # Ignore DNS resolution failure, the default value is true
   # interface-name: en0 # outbound interface name
-
 # Local SOCKS5 / HTTP(S) service authentication
 # authentication:
 #  - "user1:pass1"
 #  - "user2:pass2"
-
 # Experimental feature hosts, supports wildcards (such as *.clash.dev or even *.foo.*.example.com)
 # Static domain names have higher priority than wildcard domain names (foo.example.com takes precedence over *.example.com)
 # Note: hosts does not work in fake-ip mode
@@ -65,15 +50,12 @@ external-controller: '127.0.0.1:9090'
 #   'alpha.clash.dev': '::1'
 global-client-fingerprint: chrome #3m
 # !!! note Optional: chrome, firefox, safari, iOS, android, edge, 360, qq, random, If selected random, a modern browser fingerprint is probabilistically generated based on Cloudflare Radar data.
-
 enable-process: true # 3M
 find-process-mode: strict
-
 tun:
   enable: true
   stack: mixed
   dns-hijack: [any:53]
-
 #------------------------- added by 3M
 # The interval for TCP Keep Alive packets, measured in seconds.
 keep-alive-interval: 15
@@ -83,7 +65,6 @@ keep-alive-idle: 15
 disable-keep-alive: false
 #------------------------- end
 unified-delay: true
-
 sniffer:
   enable: true #false
   force-dns-mapping: true
@@ -105,10 +86,8 @@ sniffer:
     #- 192.168.0.3/32
   #skip-dst-address:
     #- 192.168.0.3/32
-
 dns:
   enabled: true
-
   prefer-h3: false
   #use-hosts: true
   #use-system-hosts: true
@@ -133,7 +112,6 @@ dns:
     - https://dns.alidns.com/dns-query
     - 9.9.9.9 # added by 3M
     - 208.67.222.222 # added by 3M
-
     - tls://8.26.56.26 # added by 3M
     - udp://8.26.56.26 # added by 3M
     - 119.29.29.29
@@ -151,11 +129,7 @@ dns:
     - 1.1.1.1
     - tls://1.0.0.1:853
     - tls://dns.google:853
-
 #_________________________________________________________________________________________________________________________
-
-
-
 #dns:
   #enable: true # Whether to enable dns false
   #ipv6: false
@@ -187,7 +161,6 @@ dns:
      #geoip: true # default
      #ipcidr: #IP addresses in this network segment will be considered polluted IPs
        #- 240.0.0.0/4
-
 # 1. Clash DNS request logic:
 # (1) When accessing a domain name, nameserver concurrently requests all servers in the fallback list to obtain the IP address corresponding to the domain name.
 # (2) clash will select the fastest resolution result in the nameserver list.
@@ -205,7 +178,6 @@ dns:
 # DoH: DNS servers starting with https://. It has better disguise and is almost impossible to be blocked by operators or network management, but the query efficiency and security may be slightly lower.
 # DoT: DNS server starting with tls://. It has higher security and query efficiency, but the port may be controlled or blocked.
 # To learn more about DoH/DoT related technologies, please refer to the specification document.
-
 # Proxy Group
 # Do not include the following 3 in the subscription, otherwise there will be errors
 # Will be ignored after profile selection
@@ -221,12 +193,10 @@ dns:
 # - Shadowsocks
 #rules:
 #  - 'MATCH,DIRECT'
-
 # Clash for Windows
 # Proxies module latency test settings
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
-
 # Mixin
 #Supports injecting common property settings into all configuration files
 #cfw-profile-mixin:
@@ -243,10 +213,8 @@ cfw-latency-url: http://www.gstatic.com/generate_204
      #- 114.114.114.114 # 114DNS
   #experimental:
     #interface-name: WLAN
-
 #Custom configuration directory
 #cfw-profiles-path: 'C:\Users\Administrator\.config\clash\profiles'
-
 # Disconnect
 # Identify strategy of breaking connections after switching to a new proxy/profile/mode
 # Options for proxy: none, chain(proxy group in connection chains), all
@@ -256,20 +224,16 @@ cfw-conn-break-strategy:
   proxy: none # none/chain/all
   profile: true # true/false
   mode: false # true/false
-
 # Customize status bar icon
 #cfw-tray-icon:
 #default: .\resources\static\imgs\logo_64.png # Default icon
 #system-proxy-on: .\resources\static\imgs\custom.ico # Icon after turning on system proxy
-
 # Custom Fonts
 #cfw-font-family: "Noto Sans TC" # Fonts available in the system
-
 # Custom request headers
 #cfw-http-headers:
   #token: "123456"
   #cfw-version: "0.9.11"
-
 # Custom node sorting
 # Optional parameters:
 # default: Define the node order according to the configuration file
@@ -277,7 +241,6 @@ cfw-conn-break-strategy:
 # alphabet: Arrange by node name alphabetically
 # Sort proxies in Proxies module by default/latency/alphabet
 cfw-proxies-order: default
-
 # Subprocess starts other applications
 # Run child process after CFW started
 # Refer: https://docs.cfw.lbyczf.com/contents/childprocess.html
@@ -303,45 +266,10 @@ cfw-proxies-order: default
       #detached: true # The child process runs independently of its parent process
       #shell: true # Run command in shell
       #windowsHide: true # Hide the console window of the child process
-
 # System proxy bypass list cfw-bypass
 # System proxy will ignore these domains(or ipnet)
 # System proxy skip list - backup, does not work,
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
-
-
-#proxies: {{proxy}}
-#proxy-groups: {{proxy-groups}}
-proxies: ~
-proxy-groups: ~
-#==================================================================================== START
-# I deactivatd 2 following lines because I disabled creating them in SUB.INI.
-#rule-providers: ~
-#rules: ~
-#==================================================================================== END
-
-
-#==================================================================================== START
-# For test purposes although I couldn't make it work.
-#sub-rules:
-  #rule1:
-    # BT
-    #- DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
-    #- SRC-IP-CIDR,192.168.11.8/32,DIRECT
-
-    #- DOMAIN-SUFFIX,wttr.in,DIRECT
-    #- GEOSITE,apple,DIRECT
-    #- GEOSITE,category-pt,DIRECT
-    #- RULE-SET,apple,DIRECT
-    #- RULE-SET,applications,DIRECT
-    #- RULE-SET,cncidr,DIRECT
-    #- RULE-SET,icloud,DIRECT
-    #- RULE-SET,lancidr,DIRECT
-    #- RULE-SET,private,DIRECT
-    #- GEOIP,LAN,DIRECT
-    #- GEOIP,CN,DIRECT
-#==================================================================================== END
-
 rule-providers:
   reject:
     type: http
@@ -363,7 +291,6 @@ rule-providers:
     url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.txt"
     path: ./ruleset/iran_ads.txt
     interval: 432000
-
 #  ads:
 #    type: http
 #    format: text
@@ -371,7 +298,6 @@ rule-providers:
 #    url: "https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt"
 #    path: ./ruleset/ads.txt
 #    interval: 86400
-
 #  lancidr:
 #    type: http
 #    behavior: ipcidr
@@ -453,38 +379,7 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/juewuy/ShellClash/master/rules/ai.list
     path: ./ruleset/ai.list
-    interval: 432000
-
-  Copilot:
-    type: http
-    format: text
-    behavior: classical
-    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Copilot.list
-    path: ./ruleset/Copilot.list
-    interval: 432000
-
-
-  GithubCopilot:
-    type: http
-    format: text
-    behavior: classical
-    url: https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/GithubCopilot.list
-    path: ./ruleset/GithubCopilot.list
-    interval: 432000
-  Claude:
-    type: http
-    format: text
-    behavior: classical
-    url:  https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Claude.list
-    path: ./ruleset/Claude.list 
-    interval: 432000
-  Gemini:
-    type: http
-    format: text
-    behavior: classical
-    url:  https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/Gemini.list
-    path: ./ruleset/Gemini.list 
-    interval: 432000  
+    interval: 432000    
   YT:
     type: http
     format: text
@@ -506,13 +401,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
     path: ./ruleset/Foreign-Media.list
     interval: 432000
-  #Proxy Lite:
-  #  type: http
-  #  format: text
-  #  behavior: classical
-  #  url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
-  #  path: ./ruleset/Proxy-Lite.list
-  #  interval: 432000
+  Proxy Lite:
+    type: http
+    format: text
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./ruleset/Proxy-Lite.list
+    interval: 432000
   CF-CIDR:
     type: http
     format: text
@@ -554,7 +449,8 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
     path: ./ruleset/Game-Sony.list
-    interval: 432000  
+    interval: 432000
+  
   oisd_big:
     type: http
     behavior: classical
@@ -562,12 +458,15 @@ rule-providers:
     url: https://raw.githubusercontent.com/hillz2/openclash_adblock/main/oisd_big.yaml
     interval: 28800 # Update rules every 8 hours
 
+sub-rules:
+  rule1:
+    - DOMAIN-SUFFIX,bgp.tools,🎯 Global Direct
+    - DOMAIN,bgp.tools,🎯 Global Direct
 
 rules:
-##Rule:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
-  #- SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
+  - SUB-RULE,(NETWORK,TCP),rule1
   
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
@@ -584,14 +483,8 @@ rules:
   - RULE-SET, Microsoft-OneDrive,Ⓜ️ MS OneDrive
   - RULE-SET,Apple, 🍎 Apple Services
   - RULE-SET,TG,📲 Telegram
-
   - RUlE-SET,OpenAI, 🤖 OpenAI
   - RUlE-SET,AI, 🤖 OpenAI
-  - RUlE-SET,Claude, 🤖 OpenAI
-  - RUlE-SET,Gemini, 🤖 OpenAI
-  - RUlE-SET,GithubCopilot, 🤖 OpenAI
-  - RUlE-SET,Copilot, 🤖 OpenAI
-
   - RULE-SET,YT,📹 YouTube
   - RULE-SET,NetFlix,🎥 Netflix
   - RULE-SET,Foreign-Media,🌍 Foreign Media
@@ -603,10 +496,8 @@ rules:
   - RULE-SET, Game-Origin, 🎮 Game Platforms
   - RULE-SET, Game-Sony, 🎮 Game Platforms
   
-
-  - GEOIP,LAN, 🎯 Global Direct
+  
   - GEOIP,IR, 🎯 Global Direct
   - DOMAIN-SUFFIX,ir, 🎯 Global Direct
   - RULE-SET,iran_other_sites, 🎯 Global Direct
   - MATCH,🐟 Free Fish
-#
