@@ -270,6 +270,11 @@ cfw-proxies-order: default
 # System proxy will ignore these domains(or ipnet)
 # System proxy skip list - backup, does not work,
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
+
+Proxy: ~
+Proxy Group: ~
+
+
 rule-providers:
   reject:
     type: http
