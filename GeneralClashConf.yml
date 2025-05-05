@@ -271,8 +271,8 @@ cfw-proxies-order: default
 # System proxy skip list - backup, does not work,
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
 
-Proxy: ~
-Proxy Group: ~
+proxies: ~
+proxy-groups: ~
 
 
 rule-providers:
