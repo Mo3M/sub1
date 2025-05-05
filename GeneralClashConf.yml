@@ -506,13 +506,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
     path: ./ruleset/Foreign-Media.list
     interval: 432000
-  Proxy Lite:
-    type: http
-    format: text
-    behavior: classical
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
-    path: ./ruleset/Proxy-Lite.list
-    interval: 432000
+  #Proxy Lite:
+  #  type: http
+  #  format: text
+  #  behavior: classical
+  #  url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+  #  path: ./ruleset/Proxy-Lite.list
+  #  interval: 432000
   CF-CIDR:
     type: http
     format: text
