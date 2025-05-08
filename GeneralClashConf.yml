@@ -273,6 +273,10 @@ cfw-proxies-order: default
 proxies: ~
 
 proxy-groups: ~
+
+# proxies: {{proxy}}
+# proxy-groups: {{proxy-groups}}
+
 # Subprocess starts other applications
 # Run child process after CFW started
 # Refer: https://docs.cfw.lbyczf.com/contents/childprocess.html
@@ -305,9 +309,7 @@ proxy-groups: ~
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
 
 
-# proxies: {{proxy}}
-# proxy-groups: {{proxy-groups}}
-proxies: ~
+
 
 # ==================================================== START
 # I deactivatd 2 following lines because I disabled creating them in SUB.INI.
