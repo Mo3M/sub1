@@ -259,8 +259,8 @@ cfw-conn-break-strategy:
 
 # Custom request headers
 # cfw-http-headers:
-  #token: "123456"
-  #cfw-version: "0.9.11"
+#  token: "123456"
+#  cfw-version: "0.9.11"
 
 # Custom node sorting
 # Optional parameters:
@@ -276,7 +276,7 @@ cfw-proxies-order: default
 # Refer: https://docs.cfw.lbyczf.com/contents/childprocess.html
 # cfw-child-process:
   # Start the subscription conversion program, port number 7893
-  #- command: "subconverter.exe" # run.cmd program name subconverter.exe -cfw >>logs/run.log 2>&1
+  # - command: "subconverter.exe" # run.cmd program name subconverter.exe -cfw >>logs/run.log 2>&1
     # args:
       # - "-cfw" # Run parameter 1
       # - "-f" # Run parameter 2
@@ -304,16 +304,19 @@ cfw-proxies-order: default
 
 
 proxies: ~
+
 proxy-groups: ~
+
+
 # proxies: {{proxy}}
 # proxy-groups: {{proxy-groups}}
+
 
 # ==================================================== START
 # I deactivatd 2 following lines because I disabled creating them in SUB.INI.
 # rule-providers: ~
 # rules: ~
 # ==================================================== END
-
 
 
 # ==================================================== START
