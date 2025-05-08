@@ -1,8 +1,7 @@
-
-#---------------------------------------------------#
+# ---------------------------------------------------#
 # The configuration file needs to be placed in $HOME/.config/clash/config.yml
 # Or run config.yml in the directory
-#---------------------------------------------------#
+# ---------------------------------------------------#
 # Mixed port HTTP and SOCKS5 use one port
 mixed-port: 7890
 # HTTP proxy port
@@ -303,7 +302,8 @@ cfw-proxies-order: default
 # System proxy skip list - backup, does not work,
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
 
-
+# A
+# A
 proxies: ~
 
 proxy-groups: ~
