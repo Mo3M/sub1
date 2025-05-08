@@ -1,12 +1,63 @@
+#---------------------------------------------------#
+# The configuration file needs to be placed in $HOME/.config/clash/config.yml
+# Or run config.yml in the directory
+#---------------------------------------------------#
+# Mixed port HTTP and SOCKS5 use one port
 mixed-port: 7890
+# HTTP proxy port
+# port: 7890
+
+# SOCKS5 proxy port
 socks-port: 7891
+
+# redir proxy port for Linux and macOS (uncomment if you want to use this feature)
+# run-port: 7892
+
+# Allow LAN connections (can be used to share proxies)
 allow-lan: true
+# Only applies if allow-lan is set to true
+# #"*": bind all IP addresses
+# #192.168.122.11: Bind a single IPv4 address
+# #"[aaaa::a8aa:ff:fe09:57d8]": Bind a single IPv6 address
 bind-address: "*"
 ipv6: true
+# Rule mode: rule (rule) / global (global proxy) / direct (global direct connection) / script (script)
 mode: rule
+# Set the log output level (default level: silent, which means no output to avoid program memory overflow due to excessive log content).
+# 5 levels: silent / error / warning / info / debug. The higher the level, the larger the log output, and the more inclined to debugging. Please enable it if necessary.
 log-level: info
+
+# Clash 的 RESTful API
 external-controller: '127.0.0.1:9090'
+# You can place static web resources (such as clash-dashboard) in a directory, and clash will serve `RESTful API/ui`
+# The parameter should be filled in with the relative path or absolute path of the configuration directory.
+# http://127.0.0.1:9090/ui/#/
+# external-ui: folder
+# yacd panel: https://github.com/haishanh/yacd
+# Razord panel: http://clash.razord.top/#/proxies
+# external-ui: dashboard
+
+# RESTful API password (optional)
+# secret: ""
+
+# Experimental Features
+#experimental:
+ # ignore-resolve-fail: true # Ignore DNS resolution failure, the default value is true
+  # interface-name: en0 # outbound interface name
+
+# Local SOCKS5 / HTTP(S) service authentication
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
+
+# Experimental feature hosts, supports wildcards (such as *.clash.dev or even *.foo.*.example.com)
+# Static domain names have higher priority than wildcard domain names (foo.example.com takes precedence over *.example.com)
+# Note: hosts does not work in fake-ip mode
+#hosts:
+#   '*.clash.dev': 127.0.0.1
+#   'alpha.clash.dev': '::1'
 global-client-fingerprint: chrome #3m
+# !!! note Optional: chrome, firefox, safari, iOS, android, edge, 360, qq, random, If selected random, a modern browser fingerprint is probabilistically generated based on Cloudflare Radar data.
 
 enable-process: true # 3M
 find-process-mode: strict
@@ -16,9 +67,14 @@ tun:
   stack: mixed
   dns-hijack: [any:53]
 
+# ------------------------- added by 3M
+# The interval for TCP Keep Alive packets, measured in seconds.
 keep-alive-interval: 15
+# The maximum idle time for TCP Keep Alive.
 keep-alive-idle: 15
+# Disable TCP Keep Alive; on Android, this is set to true by default.
 disable-keep-alive: false
+# ------------------------- end
 unified-delay: true
 
 sniffer:
@@ -34,21 +90,35 @@ sniffer:
       ports: [443, 8443]
     QUIC:
       ports: [443, 8443]
+  # force-domain:
+    # - +.v2ex.com
+  # skip-domain:
+    # - Mijia Cloud
+  # skip-src-address:
+    # - 192.168.0.3/32
+  # skip-dst-address:
+    # - 192.168.0.3/32
 
 dns:
   enabled: true
 
   prefer-h3: false
+#  use-hosts: true
+#  use-system-hosts: true
   respect-rules: true
   
   ipv6: false #3m changed it
   listen: 0.0.0.0:53
   enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
-
+  # fake-ip-range: 198.18.0.1/16 #
+  # #fake-ip-filter-mode: blacklist # new
+  # fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
+     # - '*.and'
+     # - localhost.ptlogin2.qq.com
   default-nameserver:
     - 9.9.9.9
     - 223.5.5.5
-
+    # - https://doh.sandbox.opendns.com/dns-query
   nameserver:
     - 9.9.9.9 # added by 3M
     - 223.5.5.5
@@ -61,9 +131,10 @@ dns:
 
     - tls://8.26.56.26 # added by 3M
     - udp://8.26.56.26 # added by 3M
-    - 119.29.29.29    
+    - 119.29.29.29
     - https://dns.google/dns-query # added by 3M
     - https://dns.cloudflare.com/dns-query # added by 3M
+    # - 172.67.37.81 # added by 3M
   proxy-server-nameserver:
     - https://223.5.5.5/dns-query
     - tls://223.5.5.5
@@ -75,17 +146,197 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 
+# ___________________________________________________________
+
+
+
+# dns:
+#  enable: true # Whether to enable dns false
+#  ipv6: false
+#  listen: 0.0.0.0:53
+#  enhanced-mode: redir-host # Mode: redir-host or fake-ip
+#  fake-ip-range: 198.18.0.1/16 #
+#  fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
+     #- '*.and'
+     #- localhost.ptlogin2.qq.com
+  #nameserver:
+     #- 223.5.5.5 # Alibaba DNS
+     #- 180.76.76.76 # Baidu DNS
+     #- 119.29.29.29 # Tencent DNS
+     #- 117.50.11.11 # ONE DNS interception version malicious website interception, advertising filtering
+     #- 117.50.10.10 # ONE DNS pure version directly returns its real response result
+     #- 114.114.114.114 # 114DNS
+     #- https://dns.alidns.com/dns-query # Ali DoH DNS
+     #- https://doh.360.cn/dns-query # 360 DoH DNS
+  #fallback:
+     #- 8.8.8.8 # Google DNS
+     #- 1.1.1.1 # Cloudflare DNS
+     #- tls://dns.rubyfish.cn:853
+     #- tls://1.0.0.1:853
+     #- tls://dns.google:853
+     #- https://dns.rubyfish.cn/dns-query
+     #- https://cloudflare-dns.com/dns-query
+     #- https://dns.google/dns-query
+  #fallback-filter:
+     #geoip: true # default
+     #ipcidr: #IP addresses in this network segment will be considered polluted IPs
+       #- 240.0.0.0/4
+
+# 1. Clash DNS request logic:
+# (1) When accessing a domain name, nameserver concurrently requests all servers in the fallback list to obtain the IP address corresponding to the domain name.
+# (2) clash will select the fastest resolution result in the nameserver list.
+# (3) If the IP address in the resolution result belongs to a foreign country, then clash will select the fastest resolution result in the fallback list.
+#
+# Therefore, I placed pollution-free, fast-resolution domestic DNS servers in both nameserver and fallback to achieve the fastest resolution speed.
+# However, the servers in the fallback list will be used to resolve overseas websites. In order to ensure that the results are absolutely uncontaminated, I only retained two servers that support DoT/DoH.
+#
+# 2. Notes on clash DNS configuration:
+# (1) If you want to ensure that the DNS resolution results are not polluted, please only keep the DNS servers starting with tls:// or https:// in the list, but this is usually not necessary for domestic domain names.
+# (2) If you do not care about the possibility of parsing polluted results and prefer speed, please insert the servers in the nameserver list into the fallback list and remove duplicates.
+#
+# 3. About the choice of DNS over HTTPS (DoH) and DNS over TLS (DoT):
+# Both sides have their own opinions on the two technologies, and there will be endless debates, each has its own advantages and disadvantages. Please choose according to your specific needs, but DoT is enabled by default in the configuration file because there is no blockade or regulation in China at present.
+# DoH: DNS servers starting with https://. It has better disguise and is almost impossible to be blocked by operators or network management, but the query efficiency and security may be slightly lower.
+# DoT: DNS server starting with tls://. It has higher security and query efficiency, but the port may be controlled or blocked.
+# To learn more about DoH/DoT related technologies, please refer to the specification document.
+
+# Proxy Group
+# Do not include the following 3 in the subscription, otherwise there will be errors
+# Will be ignored after profile selection
+#proxies:
+#  - name: Shadowsocks
+#    type: socks5
+#    server: 127.0.0.1
+#    port: 1080
+#proxy-groups:
+#  - name: Proxy
+#    type: select
+#    proxies:
+# - Shadowsocks
+#rules:
+#  - 'MATCH,DIRECT'
+
+# Clash for Windows
+# Proxies module latency test settings
+
 cfw-latency-timeout: 3000
 cfw-latency-url: http://www.gstatic.com/generate_204
+
+# Mixin
+#Supports injecting common property settings into all configuration files
+#cfw-profile-mixin:
+  #dns:
+    #enable: true
+    #listen: :53
+    #enhanced-mode: fake-ip
+    #nameserver:
+     #- 223.5.5.5 # Alibaba DNS
+     #- 180.76.76.76 # Baidu DNS
+     #- 119.29.29.29 # Tencent DNS
+     #- 117.50.11.11 # ONE DNS interception version malicious website interception, advertising filtering
+     #- 117.50.10.10 # ONE DNS pure version directly returns its real response result
+     #- 114.114.114.114 # 114DNS
+  #experimental:
+    #interface-name: WLAN
+
+#Custom configuration directory
+#cfw-profiles-path: 'C:\Users\Administrator\.config\clash\profiles'
+
+# Disconnect
+# Identify strategy of breaking connections after switching to a new proxy/profile/mode
+# Options for proxy: none, chain(proxy group in connection chains), all
+# Options for profile: true, false
+# Options for mode: true, false
 cfw-conn-break-strategy:
   proxy: none # none/chain/all
   profile: true # true/false
   mode: false # true/false
+
+# Customize status bar icon
+#cfw-tray-icon:
+#default: .\resources\static\imgs\logo_64.png # Default icon
+#system-proxy-on: .\resources\static\imgs\custom.ico # Icon after turning on system proxy
+
+# Custom Fonts
+#cfw-font-family: "Noto Sans TC" # Fonts available in the system
+
+# Custom request headers
+#cfw-http-headers:
+  #token: "123456"
+  #cfw-version: "0.9.11"
+
+# Custom node sorting
+# Optional parameters:
+# default: Define the node order according to the configuration file
+# latency: Sort by node latency in ascending order
+# alphabet: Arrange by node name alphabetically
+# Sort proxies in Proxies module by default/latency/alphabet
 cfw-proxies-order: default
 
-proxies: ~
 
+# Subprocess starts other applications
+# Run child process after CFW started
+# Refer: https://docs.cfw.lbyczf.com/contents/childprocess.html
+#cfw-child-process:
+  # Start the subscription conversion program, port number 7893
+  #- command: "subconverter.exe" # run.cmd program name subconverter.exe -cfw >>logs/run.log 2>&1
+    #args:
+      #- "-cfw" # Run parameter 1
+      #- "-f" # Run parameter 2
+      #- "pref-acl4ssr.yml" # Run parameter 3
+    #options:
+      #cwd: subconverter # subprocess working directory
+      #detached: true # The child process runs independently of its parent process
+      #shell: true # Run command in shell
+      #windowsHide: true # Hide the console window of the child process
+  # Start NetEase Cloud, port number 3333
+  #- command: "unblockneteasemusic.exe" # Start NetEase Cloud Music
+    #args:
+      #- "-p" # Run parameter 1
+      #- "3333" # Run parameter 2
+    #options:
+      #cwd: unblockNeteaseMusic # subprocess working directory
+      #detached: true # The child process runs independently of its parent process
+      #shell: true # Run command in shell
+      #windowsHide: true # Hide the console window of the child process
+
+# System proxy bypass list cfw-bypass
+# System proxy will ignore these domains(or ipnet)
+# System proxy skip list - backup, does not work,
+# You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
+
+
+# proxies: {{proxy}}
+# proxy-groups: {{proxy-groups}}
+proxies: ~
 proxy-groups: ~
+#==================================================== START
+# I deactivatd 2 following lines because I disabled creating them in SUB.INI.
+#rule-providers: ~
+#rules: ~
+#==================================================== END
+
+
+#==================================================== START
+# For test purposes although I couldn't make it work.
+# sub-rules:
+#  rule1:
+#     BT
+#    - DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
+#    - SRC-IP-CIDR,192.168.11.8/32,DIRECT
+#
+#    - DOMAIN-SUFFIX,wttr.in,DIRECT
+#    - GEOSITE,apple,DIRECT
+#    - GEOSITE,category-pt,DIRECT
+#    - RULE-SET,apple,DIRECT
+#    - RULE-SET,applications,DIRECT
+#    - RULE-SET,cncidr,DIRECT
+#    - RULE-SET,icloud,DIRECT
+#    - RULE-SET,lancidr,DIRECT
+#    - RULE-SET,private,DIRECT
+#    - GEOIP,LAN,DIRECT
+#    - GEOIP,CN,DIRECT
+#==================================================== END
 
 rule-providers:
   reject:
@@ -108,6 +359,21 @@ rule-providers:
     url: "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.txt"
     path: ./ruleset/iran_ads.txt
     interval: 432000
+
+#  ads:
+#    type: http
+#    format: text
+#    behavior: domain
+#    url: "https://raw.githubusercontent.com/bigdargon/hostsVN/master/option/domain.txt"
+#    path: ./ruleset/ads.txt
+#    interval: 86400
+
+#  lancidr:
+#    type: http
+#    behavior: ipcidr
+#    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+#    path: ./ruleset/lancidr.yaml
+#    interval: 86400
   BanAD:
     type: http
     format: text
@@ -236,6 +502,13 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
     path: ./ruleset/Foreign-Media.list
     interval: 432000
+#  Proxy Lite:
+#    type: http
+#    format: text
+#    behavior: classical
+#    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+#    path: ./ruleset/Proxy-Lite.list
+#    interval: 432000
   CF-CIDR:
     type: http
     format: text
@@ -287,9 +560,17 @@ rule-providers:
 
 
 rules:
+# Rule:
+#  - PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
+#  - PROCESS-NAME, com.waze, 🐟 Free Fish
+#  - SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
+
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
+#  - RULE-SET,oisd_big,REJECT
+
   - RULE-SET,iran_ads, 🛑 Global Block
+
   - RULE-SET,BanAD, 🛑 Global Block
   - RULE-SET,BanProgramAD,🍃 Application Ban
   - RULE-SET,Adobe,🍃 Application Ban
@@ -310,7 +591,7 @@ rules:
   - RULE-SET,YT,📹 YouTube
   - RULE-SET,NetFlix,🎥 Netflix
   - RULE-SET,Foreign-Media,🌍 Foreign Media
-
+# - RULE_SET,Proxy Lite,🚀 Node Selection
   - RULE-SET, CF-CIDR,☁️ CloudFlareCDN
   - RULE-SET, NetEaseMusic,🎶 NetEase Music
   - RULE-SET, Game-Epic, 🎮 Game Platforms
@@ -323,6 +604,4 @@ rules:
   - GEOIP,IR, 🎯 Global Direct
   - DOMAIN-SUFFIX,ir, 🎯 Global Direct
   - RULE-SET,iran_other_sites, 🎯 Global Direct
-#  - MATCH,🐟 Free Fish  # 3M I disabled it because I have to have at least one rule generated by the SUB.INI file. If there's no rule generated by SUB.INI then it will propagate the file by its own rules.
-# Moreover, if I set overwrite_rules and generate_rules in the SUB.INI to false the vless reality nodes don't have double quotation mark in SHORT-ID parameter. That's why The final rule is generated 
-# by the SUB.INI and not in here.
+  - MATCH,🐟 Free Fish
