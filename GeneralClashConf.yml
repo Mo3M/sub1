@@ -82,9 +82,10 @@ cfw-conn-break-strategy:
   profile: true # true/false
   mode: false # true/false
 cfw-proxies-order: default
-Proxy: ~
-proxy: ~
+
 proxies: ~
+
+proxy-groups: ~
 
 rule-providers:
   reject:
@@ -286,13 +287,9 @@ rule-providers:
 
 
 rules:
-
   - RULE-SET,oisd_big,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
-
-  
   - RULE-SET,iran_ads, 🛑 Global Block
-  
   - RULE-SET,BanAD, 🛑 Global Block
   - RULE-SET,BanProgramAD,🍃 Application Ban
   - RULE-SET,Adobe,🍃 Application Ban
