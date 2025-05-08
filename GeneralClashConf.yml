@@ -51,6 +51,7 @@ dns:
 
   nameserver:
     - 9.9.9.9 # added by 3M
+    - 223.5.5.5
     - http://9.9.9.9
     - https://doh.sandbox.opendns.com/dns-query
     - https://doh.opendns.com/dns-query
@@ -60,8 +61,7 @@ dns:
 
     - tls://8.26.56.26 # added by 3M
     - udp://8.26.56.26 # added by 3M
-    - 119.29.29.29
-    - 223.5.5.5
+    - 119.29.29.29    
     - https://dns.google/dns-query # added by 3M
     - https://dns.cloudflare.com/dns-query # added by 3M
   proxy-server-nameserver:
