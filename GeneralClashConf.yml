@@ -342,6 +342,7 @@ cfw-proxies-order: default
     #- GEOIP,LAN,DIRECT
     #- GEOIP,CN,DIRECT
 # ==================================================================================== END
+Proxy: ~
 
 rule-providers:
   reject:
