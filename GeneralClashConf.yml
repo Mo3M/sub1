@@ -311,21 +311,21 @@ cfw-proxies-order: default
 # You can interchange the contents of cfw-bypass-bak and cfw-bypass when using
 
 
-#proxies: {{proxy}}
-#proxy-groups: {{proxy-groups}}
-proxies: ~
-proxy-groups: ~
-#==================================================================================== START
+# proxies: {{proxy}}
+# proxy-groups: {{proxy-groups}}
+# proxies: ~
+# proxy-groups: ~
+# ==================================================================================== START
 # I deactivatd 2 following lines because I disabled creating them in SUB.INI.
-#rule-providers: ~
-#rules: ~
-#==================================================================================== END
+# rule-providers: ~
+# rules: ~
+# ==================================================================================== END
 
 
-#==================================================================================== START
+# ==================================================================================== START
 # For test purposes although I couldn't make it work.
-#sub-rules:
-  #rule1:
+# sub-rules:
+  # rule1:
     # BT
     #- DOMAIN-SUFFIX,bgp.tools, 🎯 Global Direct
     #- SRC-IP-CIDR,192.168.11.8/32,DIRECT
@@ -341,7 +341,7 @@ proxy-groups: ~
     #- RULE-SET,private,DIRECT
     #- GEOIP,LAN,DIRECT
     #- GEOIP,CN,DIRECT
-#==================================================================================== END
+# ==================================================================================== END
 
 rule-providers:
   reject:
@@ -565,7 +565,7 @@ rule-providers:
 
 
 rules:
-##Rule:
+# #Rule:
   #- PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
   #- PROCESS-NAME, com.waze, 🐟 Free Fish
   #- SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
@@ -596,7 +596,7 @@ rules:
   - RULE-SET,YT,📹 YouTube
   - RULE-SET,NetFlix,🎥 Netflix
   - RULE-SET,Foreign-Media,🌍 Foreign Media
-  #- RULE_SET,Proxy Lite,🚀 Node Selection
+  # - RULE_SET,Proxy Lite,🚀 Node Selection
   - RULE-SET, CF-CIDR,☁️ CloudFlareCDN
   - RULE-SET, NetEaseMusic,🎶 NetEase Music
   - RULE-SET, Game-Epic, 🎮 Game Platforms
@@ -610,4 +610,3 @@ rules:
   - DOMAIN-SUFFIX,ir, 🎯 Global Direct
   - RULE-SET,iran_other_sites, 🎯 Global Direct
   - MATCH,🐟 Free Fish
-#
