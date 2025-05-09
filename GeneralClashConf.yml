@@ -598,7 +598,7 @@ rules:
   - RULE-SET, Game-Sony, 🎮 Game Platforms
   
 
-  - GEOIP,LAN, 🎯 Global Direct
+#  - GEOIP,LAN, 🎯 Global Direct
   - GEOIP,IR, 🎯 Global Direct
   - DOMAIN-SUFFIX,ir, 🎯 Global Direct
   - RULE-SET,iran_other_sites, 🎯 Global Direct
