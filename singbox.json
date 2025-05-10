@@ -7,11 +7,6 @@
     "dns": {
         "servers": [
             {
-                "tag": "local",
-                "address": "217.218.127.127",
-				"detour": "direct"                
-            },
-            {
                 "tag": "dns_proxy",
                 "address": "tls://1.1.1.1",
                 "address_resolver": "dns_resolver"
@@ -49,16 +44,25 @@
                 ],
                 "server": "dns_block",
                 "disable_cache": true
-            },          
+            },
             {
-                "domain_suffix": [
-                    "ir"
+                "geosite": [
+                    "geolocation-!cn"
                 ],
-                "server": "local"
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "server": "dns_fakeip"
+            },
+            {
+                "geosite": [
+                    "geolocation-!cn"
+                ],
+                "server": "dns_proxy"
             }
         ],
-        "final": "dns_proxy",
-		"strategy": "prefer_ipv4",
+        "final": "dns_direct",
         "independent_cache": true,
         "fakeip": {
             "enabled": true,
@@ -91,7 +95,11 @@
             "sniff": true
         }
     ],
-    "outbounds": [],    
+    "outbounds": [],
+    "route": {
+        "rules": [],
+        "auto_detect_interface": true
+    },
     "experimental": {
         "cache_file": {
             "enabled": true,
@@ -101,33 +109,5 @@
             "external_controller": "127.0.0.1:9090",
             "external_ui": "dashboard"
         }
-    },
-	"route": {
-		"geoip": {
-			"path": "geoip.db",
-			"download_url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/geoip.db",
-			"download_detour": "direct"
-		},
-		"geosite": {
-			"path": "geosite.db",
-			"download_url": "https://github.com/yangchuansheng/sing-geosite/releases/latest/download/geosite.db",
-			"download_detour": "direct"
-		},
-		"rules": [{
-			"protocol": "dns",
-			"outbound": "dns-out",
-		},{
-			"geosite": ["category-ads-all"],
-			"domain_keyword": ["yektanet", "adengine.telewebiom.com"],
-			"outbound" : "block"
-		},
-		{
-			"geoip": "private",
-			"domain_suffix":["ir", "aparat.com", "digikala.com", "telewebion.com", "varzesh3.com"],
-			"port": [22, 3389],
-			"outbound": "direct"
-		}],
-		"final": "shadowsocks-out",
-		"auto_detect_interface": true
-	}
+    }
 }
