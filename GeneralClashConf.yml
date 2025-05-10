@@ -120,7 +120,7 @@ dns:
     # - https://doh.sandbox.opendns.com/dns-query
   nameserver:
     - 9.9.9.9 # added by 3M
-    - 223.5.5.5
+    - 233.5.5.5
     - http://9.9.9.9
     - https://doh.sandbox.opendns.com/dns-query
     - https://doh.opendns.com/dns-query
