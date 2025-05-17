@@ -108,7 +108,7 @@ dns:
   
   ipv6: false #3m changed it
   listen: 0.0.0.0:53
-  enhanced-mode: redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
+  enhanced-mode: fake-ip # redir-host #fake-ip # Mode: redir-host or fake-ip # disabled again by 3M
   # fake-ip-range: 198.18.0.1/16 #
   # #fake-ip-filter-mode: blacklist # new
   # fake-ip-filter: # fake ip whitelist, if you don't know the function of this parameter, please do not modify it
