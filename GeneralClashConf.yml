@@ -586,7 +586,7 @@ rules:
 #  - SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
 
   - RULE-SET,oisd_big,🛑 Global Block
-  - RULE-SET,oisd_big2,🛑 Global Block
+#  - RULE-SET,oisd_big2,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
 #  - RULE-SET,oisd_big,REJECT
 
