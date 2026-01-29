@@ -571,6 +571,14 @@ rule-providers:
     interval: 28800 # Update rules every 8 hours
 
 
+  oisd_big2:
+    type: http
+    behavior: classical
+    path: ./rule_provider/oisd_big.txt
+    url: https://raw.githubusercontent.com/sjhgvr/oisd/main/domainswild2_big.txt
+    interval: 28800
+    format: text
+
 rules:
 # Rule:
 #  - PROCESS-PATH, /data/data/com.waze, 🐟 Free Fish
@@ -578,6 +586,7 @@ rules:
 #  - SUB-RULE,(OR,((NETWORK,TCP),(NETWORK,UDP))),rule1
 
   - RULE-SET,oisd_big,🛑 Global Block
+  - RULE-SET,oisd_big2,🛑 Global Block
   - RULE-SET, reject, 🛑 Global Block
 #  - RULE-SET,oisd_big,REJECT
 
