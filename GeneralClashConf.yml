@@ -571,13 +571,13 @@ rule-providers:
     interval: 28800 # Update rules every 8 hours
 
 
-  oisd_big2:
-    type: http
-    behavior: classical
-    path: ./rule_provider/oisd_big.txt
-    url: https://raw.githubusercontent.com/sjhgvr/oisd/main/domainswild2_big.txt
-    interval: 28800
-    format: text
+#  oisd_big2:
+#    type: http
+#    behavior: classical
+#    path: ./rule_provider/oisd_big.txt
+#    url: https://raw.githubusercontent.com/sjhgvr/oisd/main/domainswild2_big.txt
+#    interval: 28800
+#    format: text
 
 rules:
 # Rule:
