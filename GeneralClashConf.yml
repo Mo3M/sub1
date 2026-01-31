@@ -60,7 +60,53 @@ global-client-fingerprint: chrome #3m
 
 enable-process: true # 3M
 find-process-mode: strict
-
+hosts:
+  one.one.one.one: [
+        1.1.1.1,
+        1.0.0.1,
+        '2606:4700:4700::1111',
+        '2606:4700:4700::1001'
+      ]
+  dns.cloudflare.com: [
+        104.16.132.229,
+        104.16.133.229,
+        '2606:4700::6810:84e5',
+        '2606:4700::6810:85e5'
+      ]
+  dot.pub: [
+        1.12.12.12,
+        120.53.53.53
+      ]
+  dns.google: [
+        8.8.8.8,
+        8.8.4.4,
+        '2001:4860:4860::8888',
+        '2001:4860:4860::8844'
+      ]
+  dns.quad9.net: [
+        9.9.9.9,
+        149.112.112.112,
+        '2620:fe::fe',
+        '2620:fe::9'
+      ]
+  dns.alidns.com: [
+        223.5.5.5,
+        223.6.6.6,
+        '2400:3200::1',
+        '2400:3200:baba::1'
+      ]
+  common.dot.dns.yandex.net: [
+        77.88.8.8,
+        77.88.8.1,
+        '2a02:6b8::feed:0ff',
+        '2a02:6b8:0:1::feed:0ff'
+      ]
+  doh.opendns.com: [208.67.222.222,208.67.220.220,'2620:119:35::35','2620:119:53::53']
+  dns.jstockley.com: 104.21.69.35,
+  do.shimul.me: 159.65.149.35,
+  doh.dns.apple.com: 17.132.84.3,
+  freedns.controld.com: 76.76.2.0,
+  unfiltered.joindns4.eu: 86.54.11.100
 tun:
   enable: true
   stack: mixed
@@ -115,13 +161,13 @@ dns:
      # - '*.and'
      # - localhost.ptlogin2.qq.com
   default-nameserver:
-
-    - 208.67.222.222
-    - 208.67.220.220
-    - 9.9.9.9
-    - 1.1.1.1
+  
     - 8.8.8.8
     - 8.8.4.4
+    - 9.9.9.9
+    - 1.1.1.1
+    - 208.67.222.222
+    - 208.67.220.220
     - 216.146.35.35
     - 223.5.5.5
     # - https://doh.sandbox.opendns.com/dns-query
